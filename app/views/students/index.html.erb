@@ -1,8 +1,94 @@
+<%= render 'form.index' %>
+
+<div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-6">
+         <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>  Student</h1>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- ACTIONS -->
+ <section id="action" class="py-4 mb-4 bg-light">
+   <div class="container">
+     <div class="row">
+
+       <div class="col-md-3">
+          <%= link_to new_student_path,  class:"btn btn-success btn-block" do %>
+           <i class="fa fa-plus"></i> Create Student
+          <% end %>
+       </div>
+     </div>
+   </div>
+ </section>
 
 
+ <section id="posts">
+   <div class="container">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="card">
+           <div class="card-header">
+             <h4>Cohort Lists</h4>
+           </div>
+           <!-- <table class="table table-striped"> -->
 
-<h2> Welcome on Rails Student</h2>
-<h4>
+           <table class="table table-hover">
+             <!-- <thead class="thead-inverse"> -->
+
+              <thead>
+               <tr>
+                 <th>#</th>
+                 <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Highest Education</th>
+                 <th>Date of Birth</th>
+                 <th></th>
+                 <th></th>
+                 <th></th>
+               </tr>
+             </thead>
+             <tbody>
+                 <% @students.each do |student| %>
+               <tr>
+                 <td scope="row">1</td>
+                 <td><%= student.first_name %></td>
+                 <td>  <%= student.last_name  %></td>
+                 <td>  <%= student.highest_education %></td>
+                 <td>  <%= student.dob %></td>
+
+                 <td>
+                    <%= link_to student_path(student), class: "btn btn-secondary" do %>
+                         <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
+
+                   <% end %>
+                   <!-- <%= link_to "Open modal", "#addPostModal", :class => "btn btn-secondary", "data-toggle" => "modal" %> -->
+                 </td>
+                   <td>
+                       <%= link_to edit_student_path(student), class: "btn btn-secondary" do %>
+                           <h6>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </h6>
+                       <% end %>
+
+                   </td>
+                   <td>
+                      <%= link_to student, 'data-method': "DELETE", class: "btn btn-secondary" do %>
+                      <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+
+                     <% end %>
+                   </td>
+               </tr>
+               <% end %>
+
+
+             </tbody>
+           </table>
+         </div>
+
+ </section>
+
+
 <%= link_to 'Create New Student', new_student_path %> </h4>
 
 <% @students.each do |student| %>

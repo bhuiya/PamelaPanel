@@ -1,3 +1,71 @@
 
-<h3> Edit Student Page </h3>
-<%= render 'form' %>
+
+<%= render 'form.edit' %>
+<h2> Student Editorial Page</h2>
+
+<div class="" id="#addPostModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Edit Student Profile</h5>
+      </div>
+      <div class="modal-body">
+
+    <%= form_for @student do |f| %>
+
+              <div class="field form-group">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, class:"form-control" %>
+
+              </div>
+              <div class="form-group">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, class:"form-control" %>
+
+              </div>
+              <div class="form-group">
+                 <%= f.label :highest_education %>
+                 <%= f.text_field :highest_education, class:"form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :dob %>
+                <%= f.date_field :dob, class:"form-control"  %>
+              </div>
+         </div>
+        <div class="modal-footer">
+
+                  <%= f.submit "Save", class:"btn btn-primary" %>
+            </div>
+       <% end %>
+    </div>
+</div>
+
+</div>
+
+<!-- <%= form_for @student do |f| %>
+
+     <div>
+                 <%= f.label :first_name %>
+                 <%= f.text_field :first_name %>
+     </div>
+     <div>
+                 <%= f.label :last_name %>
+                 <%= f.text_field :last_name %>
+     </div>
+      <div>
+                  <%= f.label :dob %>
+                  <%= f.date_field :dob %>
+      </div>
+      <div>
+                  <%= f.label :highest_education %>
+                  <%= f.text_field :highest_education %>
+     </div>
+     <div>
+                   <%= f.submit %>
+     </div>
+
+<% end %> -->
+
+<!-- 
+<%= render 'form' %> -->

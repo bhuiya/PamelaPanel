@@ -1,3 +1,53 @@
 
-<h3> Edit Student Page </h3>
-<%= render 'form' %>
+
+<%= render 'form.edit' %>
+<h2> Course Editorial Page</h2>
+<!-- <%= render 'form' %> -->
+
+<div class="" id="#addPostModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Edit Course Profile</h5>
+      </div>
+      <div class="modal-body">
+
+     <%=  form_for @course do |f| %>
+
+              <div class="field form-group">
+                 <%= f.label :course_name %>
+                 <%= f.text_field :course_name, class:"form-control"  %>
+              </div>
+              <div class="form-group">
+                 <%= f.label :total_hours %>
+                 <%= f.text_field :total_hours, class:"form-control"  %>
+              </div>
+               </div>
+            <div class="modal-footer">
+
+                  <%= f.submit "Save", class:"btn btn-primary" %>
+            </div>
+       <% end %>
+    </div>
+</div>
+
+</div>
+
+
+
+<!--
+<%= form_for @course do |f| %>
+
+     <div>
+                 <%= f.label :course_name %>
+                 <%= f.text_field :course_name %>
+     </div>
+     <div>
+                 <%= f.label :total_hours %>
+                 <%= f.text_field :total_hours %>
+     </div>
+     <div>
+                   <%= f.submit %>
+     </div>
+
+<% end %> -->

@@ -1,51 +1,42 @@
 class CoursesController < ApplicationController
-   def index
-
+    def index
       @courses= Course.all
+    end
 
-   end
-   def new
-
+    def new
       @course= Course.new
+    end
 
-   end
-   def create
+    def create
         Course.create(course_params)
-
         flash[:success] = 'Your Student has sucessfully created'
-
         redirect_to courses_path
      end
+
      def edit
          @course = Course.find(params[:id])
      end
 
      def update
-          course = Course.find(params[:id])
-          course.update(course_params)
-
-          redirect_to courses_path
+            scourse = Course.find(params[:id])
+            course.update(course_params)
+            redirect_to courses_path
 
      end
+
      def destroy
             Course.destroy(params[:id])
-
-             redirect_to courses_path
-
+            redirect_to courses_path
      end
 
      def show
-
            @course = Course.find(params[:id])
+     end
 
-      end
-
-
-     private
-     def course_params
+    private
+      def course_params
          params.require(:course).permit(:course_name, :total_hours)
-
-  end
+    end
 
 
 end
