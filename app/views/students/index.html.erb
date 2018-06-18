@@ -1,0 +1,31 @@
+
+
+
+<h2> Welcome on Rails Student</h2>
+<h4>
+<%= link_to 'Create New Student', new_student_path %> </h4>
+
+<% @students.each do |student| %>
+   <div>
+        First Name = <%= student.first_name %>
+   </div>
+   <div>
+        Last Name = <%= student.last_name %>
+   </div>
+   <div>
+        Date of Birth = <%= student.dob %>
+   </div>
+   <div>
+        Date of Birth = <%= student.highest_education %>
+   </div>
+
+   <div>
+      <%= link_to 'View', student_path(student), 'data-disable-with': 'Processing ...' %>
+      <%= link_to 'Edit', edit_student_path(student) %>
+      <%= link_to 'Delete', student, 'data-method': "DELETE" %>
+
+
+      </div>
+
+
+<% end %>

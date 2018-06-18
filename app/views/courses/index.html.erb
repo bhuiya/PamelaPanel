@@ -1,0 +1,23 @@
+
+<H1> Welcome to the course Model  </H1>
+<h4>
+<%= link_to 'Create New Student', new_course_path %> </h4>
+
+<% @courses.each do |course| %>
+   <div>
+        First Name = <%= course.course_name %>
+   </div>
+   <div>
+        Last Name = <%= course.total_hours %>
+   </div>
+
+   <div>
+      <%= link_to 'View', course_path(course), 'data-disable-with': 'Processing ...' %>
+      <%= link_to 'Edit', edit_course_path(course) %>
+      <%= link_to 'Delete', course, 'data-method': "DELETE" %>
+
+
+   </div>
+
+
+<% end %>
