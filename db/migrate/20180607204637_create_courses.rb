@@ -4,6 +4,6 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :course_name
       t.integer :total_hours
       t.timestamps
-    end
+     end
   end
 end

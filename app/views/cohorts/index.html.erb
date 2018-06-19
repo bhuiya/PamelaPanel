@@ -55,9 +55,9 @@
                 </tr>
               </thead>
               <tbody>
-                  <% @cohorts.each do |cohort| %>
+                  <% @cohorts.each_with_index do |cohort, index| %>
                 <tr>
-                  <td scope="row">1</td>
+                  <td scope="row"><%= index+1 %></td>
                   <td><%= cohort.name %></td>
                   <td>  <%= cohort.course.course_name %></td>
                   <td>  <%= cohort.instructor %></td>
