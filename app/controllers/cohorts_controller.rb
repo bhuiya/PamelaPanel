@@ -7,11 +7,13 @@ class CohortsController < ApplicationController
     @cohort= Cohort.new
     @courses= Course.all
   end
+
   def create
        Cohort.create(cohort_params)
        flash[:success] = 'Your Student has sucessfully created'
        redirect_to cohorts_path
   end
+
   def edit
         @cohort = Cohort.find(params[:id])
         @course = Course.find(@cohort.course_id)
@@ -25,7 +27,10 @@ class CohortsController < ApplicationController
   end
   def destroy
            Cohort.destroy(params[:id])
-           redirect_to cohorts_path
+
+	         render json: {status: 'boom success', message: 'cohort was successfully deleted'}
+      
+           # redirect_to cohorts_path
   end
 
   def show

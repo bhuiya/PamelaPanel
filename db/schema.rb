@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_06_18_180215) do
     t.date "dob"
     t.string "salary"
     t.string "highest_education"
-    t.string "string"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

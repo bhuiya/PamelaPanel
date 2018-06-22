@@ -8,11 +8,10 @@ class StudentsController < ApplicationController
       end
       def create
            Student.create(student_params)
-
            flash[:success] = 'Your Student has sucessfully created'
-
            redirect_to students_path
         end
+
         def edit
             @student = Student.find(params[:id])
         end
@@ -20,13 +19,11 @@ class StudentsController < ApplicationController
         def update
              student = Student.find(params[:id])
              student.update(student_params)
-
              redirect_to students_path
 
         end
         def destroy
-               Student.destroy(params[:id])
-
+                Student.destroy(params[:id])
                 redirect_to students_path
 
         end

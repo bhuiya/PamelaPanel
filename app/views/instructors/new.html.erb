@@ -7,13 +7,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1>  <i class="fa fa-plus"></i> New Student </h1>
+          <h1>  <i class="fa fa-plus"></i> New Cohort </h1>
 
         </div>
       </div>
     </div>
   </div>
-  <h2> Student Insert Record</h2>
+  <h2> Cohort Insert Record</h2>
 
   <div class="" id="#addPostModal">
     <div class="modal-dialog modal-lg">
@@ -24,7 +24,7 @@
         </div>
         <div class="modal-body">
           <!-- <form> -->
-          <%=  form_for @student do |f| %>
+          <%=  form_for @instructor do |f| %>
 
             <div class="field form-group">
               <!-- <label for="title">Name</label> -->
@@ -51,8 +51,18 @@
               <%= f.text_field :highest_education, class:"form-control" %>
             </div>
 
+            <div class="form-group">
+              <%= f.label :salary %>
+              <!-- <label for="title">Start Date</label> -->
+              <!-- <input type="text" class="form-control"> -->
+              <%= f.text_field :salary, class:"form-control" %>
+            </div>
 
-<!-- </form> -->
+
+
+
+
+              <!-- </form> -->
 
         <div class="modal-footer">
           <!-- <button class="btn btn-secondary" data-dismiss="modal">Close</button> -->
