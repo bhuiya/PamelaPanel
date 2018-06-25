@@ -18,5 +18,4 @@ $(document).ready(function() {
   if (document.querySelector('body.cohorts.new, body.cohorts.edit') == undefined) {
     return;
   }
-  console.log('this stuff is visible on my new and edit page');
 });

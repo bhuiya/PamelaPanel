@@ -51,9 +51,10 @@
                </tr>
              </thead>
              <tbody>
-                 <% @students.each do |student| %>
-               <tr>
-                 <td scope="row">1</td>
+
+                <% @students.each_with_index do |student, index| %>
+                <tr class="parent-tr">
+                 <td scope="row"><%= index+1 %></td>
                  <td><%= student.first_name %></td>
                  <td>  <%= student.last_name  %></td>
                  <td>  <%= student.highest_education %></td>
@@ -64,7 +65,7 @@
                          <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
 
                    <% end %>
-                   <!-- <%= link_to "Open modal", "#addPostModal", :class => "btn btn-secondary", "data-toggle" => "modal" %> -->
+
                  </td>
                    <td>
                        <%= link_to edit_student_path(student), class: "btn btn-secondary" do %>
@@ -72,46 +73,16 @@
                        <% end %>
 
                    </td>
-                   <td>
-                      <%= link_to student, 'data-method': "DELETE", class: "btn btn-secondary" do %>
-                      <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
-
+                    <td>
+                      <%= link_to  student, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
+                     <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
                      <% end %>
+
                    </td>
                </tr>
                <% end %>
-
-
              </tbody>
            </table>
          </div>
 
  </section>
-
-
-<%= link_to 'Create New Student', new_student_path %> </h4>
-
-<% @students.each do |student| %>
-   <div>
-        First Name = <%= student.first_name %>
-   </div>
-   <div>
-        Last Name = <%= student.last_name %>
-   </div>
-   <div>
-        Date of Birth = <%= student.dob %>
-   </div>
-   <div>
-        Date of Birth = <%= student.highest_education %>
-   </div>
-
-   <div>
-      <%= link_to 'View', student_path(student), 'data-disable-with': 'Processing ...' %>
-      <%= link_to 'Edit', edit_student_path(student) %>
-      <%= link_to 'Delete', student, 'data-method': "DELETE" %>
-
-
-      </div>
-
-
-<% end %>

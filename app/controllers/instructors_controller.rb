@@ -1,46 +1,40 @@
 class InstructorsController < ApplicationController
 
   def index
-    @instructors= Instructor.all
+   @instructors= Instructor.all
   end
 
   def new
     @instructor= Instructor.new
   end
+
   def create
-       Instructor.create(instructor_params)
+    Instructor.create(instructor_params)
+    flash[:success] = 'Your Student has sucessfully created'
+    redirect_to instructors_path
+  end
 
-       flash[:success] = 'Your Student has sucessfully created'
+  def edit
+    @instructor = Instructor.find(params[:id])
+  end
 
-       redirect_to instructors_path
-    end
-    def edit
-        @instructor = Instructor.find(params[:id])
-    end
+  def update
+    instructor = Instructor.find(params[:id])
+    instructor.update(instructor_params)
+    redirect_to instructors_path
+  end
 
-    def update
-         instructor = Instructor.find(params[:id])
-         instructor.update(instructor_params)
+  def destroy
+    Instructor.destroy(params[:id])
+    render json: {status: 'boom success', message: 'student was successfully deleted'}
+  end
 
-         redirect_to instructors_path
+  def show
+     @instructor = Instructor.find(params[:id])
+  end
 
-    end
-    def destroy
-            Instructor.destroy(params[:id])
-            redirect_to instructors_path
-
-    end
-
-    def show
-
-          @instructor = Instructor.find(params[:id])
-
-     end
-
-
-    private
+  private
     def instructor_params
-        params.require(:instructor).permit(:first_name, :last_name, :dob, :highest_education, :salary)
-
+      params.require(:instructor).permit(:first_name, :last_name, :dob, :highest_education, :salary)
  end
 end

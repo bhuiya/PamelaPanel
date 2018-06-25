@@ -31,7 +31,7 @@
        <div class="col-md-12">
          <div class="card">
            <div class="card-header">
-             <h4>Cohort Lists</h4>
+             <h4>Instructor Lists</h4>
            </div>
            <!-- <table class="table table-striped"> -->
 
@@ -52,9 +52,9 @@
                </tr>
              </thead>
              <tbody>
-                 <% @instructors.each do |instructor| %>
-               <tr>
-                 <td scope="row">1</td>
+                 <% @instructors.each_with_index do |instructor, index| %>
+                <tr class="parent-tr">
+                 <td scope="row"><%= index+1 %></td>
                  <td><%= instructor.first_name %></td>
                  <td>  <%= instructor.last_name  %></td>
                  <td>  <%= instructor.highest_education %></td>
@@ -75,10 +75,11 @@
 
                    </td>
                    <td>
-                      <%= link_to instructor, 'data-method': "DELETE", class: "btn btn-secondary" do %>
-                      <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
 
-                     <% end %>
+                     <%= link_to  instructor, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
+                     <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+                    <% end %>
+
                    </td>
                </tr>
                <% end %>

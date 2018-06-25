@@ -44,7 +44,8 @@
             <!-- <thead class="thead-inverse"> -->
 
              <thead>
-              <tr>
+               <tr class="parent-tr">
+
                 <th>#</th>
                 <th>Student Name</th>
                 <th>Cohort Name</th>
@@ -58,7 +59,7 @@
             </thead>
             <tbody>
                 <% @students_cohorts.each_with_index do |students_cohort, index| %>
-              <tr>
+              <tr class="parent-tr">
                 <td scope="row"><%= index+1 %></td>
                 <td><%= students_cohort.student.full_name %></td>
                 <td>  <%= students_cohort.cohort.name %></td>
@@ -81,10 +82,19 @@
 
                   </td>
                   <td>
-                     <%= link_to students_cohort, 'data-method': "DELETE", class: "btn btn-secondary" do %>
+                     <!-- <%= link_to students_cohort, 'data-method': "DELETE", class: "btn btn-secondary" do %>
                      <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
 
-                    <% end %>
+                    <% end %> -->
+
+                    <%= link_to students_cohort, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
+                         <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+
+
+                        <% end %>
+
+
+
                   </td>
               </tr>
               <% end %>
@@ -103,7 +113,7 @@
        Student Name = <%=  students_cohort.student.full_name %>
   </div>
   <div>
-    
+
          Cohort Name = <%= students_cohort.cohort.name %>
   </div>
   <div>

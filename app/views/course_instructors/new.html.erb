@@ -24,7 +24,7 @@
 
          <%= form_for @course_instructor do |f| %>
 
-       <div class="field form-group">
+         <div class="field form-group">
              <%= f.label :course_id, 'Select Course:' %><br>
              <%= f.select :course_id, options_for_select(@courses.collect {|c| [ c.course_name, c.id ] }, {include_blank: 'Select Course'})%>
           </div>

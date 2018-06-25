@@ -44,7 +44,7 @@
             <!-- <thead class="thead-inverse"> -->
 
              <thead>
-              <tr>
+              <tr class="parent-tr">
                 <th>#</th>
                 <th>Course Name</th>
                 <th>Total hours</th>
@@ -57,7 +57,8 @@
             </thead>
             <tbody>
                 <% @course_instructors.each_with_index do |course_instructor, index| %>
-              <tr>
+                <tr class="parent-tr">
+
                 <td scope="row"><%= index+1 %></td>
                 <td><%= course_instructor.course.course_name %></td>
                 <td>  <%= course_instructor.course.total_hours %></td>
@@ -70,7 +71,7 @@
                         <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
 
                   <% end %>
-                  <!-- <%= link_to "Open modal", "#addPostModal", :class => "btn btn-secondary", "data-toggle" => "modal" %> -->
+                
                 </td>
 
                  <td>
@@ -80,10 +81,10 @@
 
                   </td>
                   <td>
-                     <%= link_to course_instructor, 'data-method': "DELETE", class: "btn btn-secondary" do %>
-                     <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
 
-                    <% end %>
+                   <%= link_to course_instructor, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
+                   <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+                   <% end %>
                   </td>
               </tr>
               <% end %>
