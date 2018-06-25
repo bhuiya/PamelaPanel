@@ -11,39 +11,28 @@
 <center>
   <h2> Student And Cohort Detail Information</h2>
 <div class="card" style="width: 30rem;">
- <div class="card-body">
+  <div class="card-body">
    <h4 class="card-title">Student Full Name</h4>
    <p class="card-text">  <%= @studentscohort.student.full_name %></p>
- </div>
- <div>
+  </div>
+  <div>
    <h4 class="card-title">Cohort Name</h4>
    <p class="card-text">  <%= @studentscohort.cohort.name %></p>
- </div>
- <div class="card-body">
+  </div>
+  <div class="card-body">
    <h4 class="card-title"> Course Name </h4>
    <p class="card-text">  <%= @studentscohort.cohort.course.course_name %></p>
- </div>
- <div class="card-body">
-  <h4 class="card-title">Start Date</h4>
-  <p class="card-text">  <%= @studentscohort.cohort.start_date %></p>
- </div>
- <div class="card-body">
-  <h4 class="card-title">End Date</h4>
-  <p class="card-text">  <%= @studentscohort.cohort.end_date %></p>
- </div>
- <div class="card-body">
+  </div>
+  <div class="card-body">
+   <h4 class="card-title">Start Date</h4>
+   <p class="card-text">  <%= @studentscohort.cohort.start_date %></p>
+  </div>
+  <div class="card-body">
+   <h4 class="card-title">End Date</h4>
+   <p class="card-text">  <%= @studentscohort.cohort.end_date %></p>
+  </div>
+  <div class="card-body">
       <%= link_to "Back to Sutdents Cohorts", students_cohorts_path %>
+  </div>
  </div>
-</div>
 </center>
-
-
-
-
-
-<!--
-<h2> Show HTML </h2>
-Student Name <%= @studentscohort.student.full_name %>
-<br>
-Cohort Name <%= @studentscohort.cohort.name %> <br>
-Course Name  <%= @studentscohort.cohort.course.course_name %> -->
