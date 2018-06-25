@@ -1,73 +1,50 @@
 
-
 <%= render 'form.index' %>
- <div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-6">
-         <h1>  <i class="fa fa-plus"></i> New Cohort </h1>
+<div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+   <h1>  <i class="fa fa-plus"></i> New Cohort </h1>
+  </div>
+  </div>
+ </div>
+</div>
+<h2> Cohort Insert Record</h2>
 
-       </div>
+<div class="" id="#addPostModal">
+ <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+   <div class="modal-header bg-primary text-white">
+    <h5 class="modal-title">Add New Cohort</h5>
+   </div>
+   <div class="modal-body">
+    <%=  form_for @cohort do |f| %>
+     <div class="field form-group">
+      <%= f.label :Name %>
+      <%= f.text_field :name, class:"form-control"  %>
+     </div>
+     <div class="form-group">
+      <%= f.label :Insturctor %>
+      <%= f.text_field :instructor, class:"form-control"  %>
+     </div>
+     <div class="form-group">
+      <%= f.label :Start_Date %>
+      <%= f.date_field :start_date, class:"form-control" %>
+     </div>
+     <div class="form-group">
+      <%= f.label :End_Date %>
+      <%= f.date_field :end_date, class:"form-control" %>
+     </div>
+     <div class="form-group">
+      <%= f.label :course_id, 'Select Course:' %>
+      <%= f.select :course_id, options_for_select(@courses.collect {|c| [ c.course_name, c.id ] },
+            {include_blank: 'Select Course'}),  class:"form-control"%>
      </div>
    </div>
- </div>
- <h2> Cohort Insert Record</h2>
-
- <div class="" id="#addPostModal">
-   <div class="modal-dialog modal-lg">
-     <div class="modal-content">
-       <div class="modal-header bg-primary text-white">
-         <h5 class="modal-title">Add New Cohort</h5>
-         <!-- <button class="close" data-dismiss="modal"><span>&times;</span></button> -->
-       </div>
-       <div class="modal-body">
-         <!-- <form> -->
-         <%=  form_for @cohort do |f| %>
-
-           <div class="field form-group">
-             <!-- <label for="title">Name</label> -->
-             <%= f.label :Name %>
-             <!-- <input type="text" class="form-control"> -->
-              <%= f.text_field :name, class:"form-control"  %>
-           </div>
-           <div class="form-group">
-             <!-- <label for="title">Instructor</label> -->
-             <%= f.label :Insturctor %>
-             <!-- <input type="text" class="form-control"> -->
-              <%= f.text_field :instructor, class:"form-control"  %>
-           </div>
-           <div class="form-group">
-             <%= f.label :Start_Date %>
-             <!-- <label for="title">Start Date</label> -->
-             <!-- <input type="text" class="form-control"> -->
-             <%= f.date_field :start_date, class:"form-control" %>
-           </div>
-
-           <div class="form-group">
-             <!-- <label for="title">End Date</label> -->
-             <%= f.label :End_Date %>
-             <!-- <input type="text" class="form-control"> -->
-                  <%= f.date_field :end_date, class:"form-control" %>
-
-           </div>
-           <div class="form-group">
-             <!-- <label for="category">Select Course</label> -->
-              <%= f.label :course_id, 'Select Course:' %>
-             <%= f.select :course_id, options_for_select(@courses.collect {|c| [ c.course_name, c.id ] },
-                {include_blank: 'Select Course'}),  class:"form-control"%>
-           </div>
-
-
-             <!-- </form> -->
-       </div>
-       <div class="modal-footer">
-         <!-- <button class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-         <!-- <button class="btn btn-primary" data-dismiss="modal">Save Changes</button> -->
-         <!-- <button class="btn btn-primary"   >Save Changes</button> -->
-         <%= f.submit "Save", class:"btn btn-primary" %>
-       </div>
-       <% end %>
-     <!-- </div> -->
+   <div class="modal-footer">
+      <%= f.submit "Save", class:"btn btn-primary" %>
+   </div>
+    <% end %>
    </div>
  </div>
  <%= render 'form.footer' %>
