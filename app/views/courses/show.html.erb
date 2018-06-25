@@ -1,40 +1,28 @@
 
 <%= render 'form.index' %>
  <div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-6">
-
-         <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i> Course</h1>
-
-       </div>
-     </div>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6">
+     <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i> Course</h1>
+    </div>
    </div>
+  </div>
  </div>
-
 
 <center>
   <h2> Course Detail Information</h2>
-<div class="card" style="width: 30rem;">
-
+ <div class="card" style="width: 30rem;">
   <div class="card-body">
     <h4 class="card-title">Course Name</h4>
     <p class="card-text">  <%= @course.course_name %></p>
   </div>
-
   <div>
-       <h4 class="card-title">Total Hours</h4>
-      <p class="card-text">  <%= @course.total_hours %></p>
+    <h4 class="card-title">Total Hours</h4>
+    <p class="card-text">  <%= @course.total_hours %></p>
   </div>
-
-
   <div class="card-body">
-      <%= link_to "Back to Courses", courses_path %>
+    <%= link_to "Back to Courses", courses_path %>
   </div>
-</div>
+ </div>
 </center>
-
-<!--
-
-<div>Course Name: <%= @course.course_name %></div>
-<div>Total Hours: <%= @course.total_hours %></div> -->

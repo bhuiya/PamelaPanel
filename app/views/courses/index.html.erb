@@ -1,116 +1,68 @@
-
 <%= render 'form.index' %>
- <div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>  Course</h1>
-        </div>
-      </div>
-    </div>
+<div class="backend_header" id="main-header" class="py-2 bg-primary text-white">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-6">
+    <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i>  Course</h1>
+   </div>
   </div>
+ </div>
+</div>
+<section id="action" class="py-4 mb-4 bg-light">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-3">
+    <%= link_to new_course_path,  class:"btn btn-success btn-block" do %>
+     <i class="fa fa-plus"></i> Create Course
+    <% end %>
+   </div>
+  </div>
+ </div>
+</section>
 
-  <!-- ACTIONS -->
-  <section id="action" class="py-4 mb-4 bg-light">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-3">
-          <%= link_to new_course_path,  class:"btn btn-success btn-block" do %>
-            <i class="fa fa-plus"></i> Create Course
-          <% end %>
-        </div>
-
-      </div>
+<section id="posts">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-12">
+    <div class="card">
+     <div class="card-header">
+      <h4>Course Lists</h4>
+     </div>
+     <table class="table table-hover">
+       <thead>
+        <tr>
+         <th>#</th>
+         <th>Course Name</th>
+         <th>Total Hours</th>
+         <th></th>
+         <th></th>
+         <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @courses.each_with_index  do |course, index| %>
+         <tr class="parent-tr">
+          <td scope="row"><%= index+1 %></td>
+          <td><%= course.course_name %></td>
+          <td>  <%= course.total_hours %></td>
+          <td>
+             <%= link_to course_path(course), class: "btn btn-secondary" do %>
+                <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
+             <% end %>
+          </td>
+           <td>
+             <%= link_to edit_course_path(course), class: "btn btn-secondary" do %>
+                    <h6>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </h6>
+             <% end %>
+           </td>
+           <td>
+              <%= link_to  course, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
+              <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
+             <% end %>
+           </td>
+          </tr>
+        <% end %>
+       </tbody>
+      </table>
     </div>
-  </section>
-
-
-  <section id="posts">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4>Course Lists</h4>
-            </div>
-
-            <table class="table table-hover">
-
-               <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Course Name</th>
-                  <th>Total Hours</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                  <% @courses.each_with_index  do |course, index| %>
-                <tr class="parent-tr">
-                  <td scope="row"><%= index+1 %></td>
-                  <td><%= course.course_name %></td>
-                  <td>  <%= course.total_hours %></td>
-
-
-                  <td>
-                     <%= link_to course_path(course), class: "btn btn-secondary" do %>
-                          <h6><i class="fa fa-info"  aria-hidden="true"></i> Show </h6>
-
-                    <% end %>
-                    <!-- <%= link_to "Open modal", "#addPostModal", :class => "btn btn-secondary", "data-toggle" => "modal" %> -->
-                  </td>
-
-                   <td>
-                    <%= link_to edit_course_path(course), class: "btn btn-secondary" do %>
-                        <h6>  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit </h6>
-                    <% end %>
-
-                    </td>
-                     <td>
-                       <!-- <%= link_to course, 'data-method': "DELETE", class: "btn btn-secondary" do %>
-                       <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
-
-                      <% end %>  -->
-
-
-                      <%= link_to  course, method: :delete, remote: true, class: 'delete-todo btn btn-secondary' do %>
-                      <h6>  <i class="fa fa-trash-o" aria-hidden="true"></i> Delete </h6>
-
-
-                     <% end %>
-
-                    </td>
-                </tr>
-                <% end %>
-
-
-              </tbody>
-            </table>
-          </div>
-
-  </section>
-
-<!--
-<%= link_to 'Create New Student', new_course_path %> </h4>
-
-<% @courses.each do |course| %>
-   <div>
-        First Name = <%= course.course_name %>
-   </div>
-   <div>
-        Last Name = <%= course.total_hours %>
-   </div>
-
-   <div>
-      <%= link_to 'View', course_path(course), 'data-disable-with': 'Processing ...' %>
-      <%= link_to 'Edit', edit_course_path(course) %>
-      <%= link_to 'Delete', course, 'data-method': "DELETE" %>
-
-
-   </div>
-
-
-<% end %> -->
+ </section>
