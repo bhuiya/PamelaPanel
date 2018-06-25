@@ -11,9 +11,6 @@ $(document).ready(function() {
   });
 });
 
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.students.new, body.students.edit') == undefined) {
     return;

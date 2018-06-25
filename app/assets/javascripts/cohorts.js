@@ -11,9 +11,6 @@ $(document).ready(function() {
   });
 });
 
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.cohorts.new, body.cohorts.edit') == undefined) {
     return;

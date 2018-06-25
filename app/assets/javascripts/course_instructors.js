@@ -10,10 +10,6 @@ $(document).ready(function() {
     toastr.success('Your todo has been successfully deleted');
   });
 });
-
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.course_instructors.new, body.course_instructors.edit') == undefined) {
     return;

@@ -11,9 +11,6 @@ $(document).ready(function() {
   });
 });
 
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.courses.new, body.courses.edit') == undefined) {
     return;

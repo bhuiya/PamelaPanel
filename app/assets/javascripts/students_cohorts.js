@@ -11,9 +11,6 @@ $(document).ready(function() {
   });
 });
 
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.students_cohorts.new, body.students_cohorts.edit') == undefined) {
     return;
