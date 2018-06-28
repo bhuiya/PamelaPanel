@@ -112,8 +112,8 @@ a:hover, a:active {
   color: white;
   text-decoration: none;
   border-radius: 200px;
-  -webkit-transition: background-color:#006400 0.2s border 0.2s color 0.2s;
-  transition: background-color 0.2s border 0.2s color 0.2s;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 .btn-full:link, .btn-full:visited, input[type=submit] {
