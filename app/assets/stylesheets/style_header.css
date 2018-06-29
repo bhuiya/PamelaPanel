@@ -13,7 +13,7 @@ html, body {
   color: #555;
   font-family: 'Lato', 'Arial', sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 20px;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -30,8 +30,6 @@ section {
 .box {
   padding: 1%;
 }
-
-/*  HEADINGS */
 
 .image_container {
   width: 1000px;
@@ -87,8 +85,6 @@ h2:after {
   margin-top: 30px;
 }
 
-/*  LINKS */
-
 a:link, a:visited {
   color: #e67e22;
   text-decoration: none;
@@ -103,8 +99,6 @@ a:hover, a:active {
   border-bottom: 1px solid transparent;
 }
 
-/*  BUTTONS */
-
 .btn:link, .btn:visited, input[type=submit] {
   display: inline-block;
   padding: 10px 30px;
@@ -117,8 +111,6 @@ a:hover, a:active {
 }
 
 .btn-full:link, .btn-full:visited, input[type=submit] {
-  /*  background-color: #e67e22;
-  border: 1px solid #e67e22; */
   background-color: #e67e22;
   border: 1px solid #e67e22;
   color: #fff;
@@ -160,8 +152,6 @@ a:hover, a:active {
   border: 1px solid #cf6d17;
   color: #fff;
 }
-
-/*  HEADER */
 
 header {
   background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/NYCDA.jpg);
@@ -209,8 +199,6 @@ header {
   margin: 5px 0;
 }
 
-/*  Main nav */
-
 .main-nav {
   float: right;
   list-style: none;
@@ -237,8 +225,6 @@ header {
   border-bottom: 2px solid #e67e22;
 }
 
-/* Animations */
-
 .js--wp-1, .js--wp-2, .js--wp-3 {
   opacity: 0;
   -webkit-animation-duration: 1s;
@@ -253,8 +239,6 @@ header {
 .js--wp-1.animated, .js--wp-2.animated, .js--wp-3.animated {
   opacity: 1;
 }
-
-/*  Card flip */
 
 .image-flip:hover .backside, .image-flip.hover .backside {
   -webkit-transform: rotateY(0deg);
@@ -339,8 +323,6 @@ header {
   padding-left: 15%;
 }
 
-/* Create four equal columns that sits next to each other */
-
 .column {
   flex: 30%;
   max-width: 33%;
@@ -351,8 +333,6 @@ header {
   margin-top: 8px;
   vertical-align: middle;
 }
-
-/* Responsive layout  */
 
 @media screen and (max-width: 800px) {
   .column {
