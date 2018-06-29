@@ -154,7 +154,7 @@ a:hover, a:active {
 }
 
 header {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/NYCDA.jpg);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(NYCDA.jpg);
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -163,7 +163,7 @@ header {
 }
 
 .backend_header {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/NYCDA.jpg);
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(NYCDA.jpg);
   background-size: cover;
   background-position: center;
   height: 35vh;
