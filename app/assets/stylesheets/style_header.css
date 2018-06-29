@@ -153,24 +153,6 @@ a:hover, a:active {
   color: #fff;
 }
 
-header {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/NYCDA.jpg));
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  background-attachment: fixed;
-  padding-top: -30px;
-}
-
-.backend_header {
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/NYCDA.jpg));
-  background-size: cover;
-  background-position: center;
-  height: 35vh;
-  background-attachment: fixed;
-  padding-top: -30px;
-}
-
 .hero-text-box {
   position: absolute;
   width: 1100px;
